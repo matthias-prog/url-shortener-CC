@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Eine Seite in GO um Links zu verkürzen">
+        <meta name="author" content="Matthias Gelszinnis">
+        <title>GO-URL-Shortener</title>
+    </head>
+
+    <body>
+        <h1>Das ist die beste URL-Shortener Seite</h1>
+        <form action="/createlink" method="post">
+            Link:<input type="text" name="longurl">
+            <input type="submit" value="Create">
+        </form>
+        <h3>Dein neuer kurzer Link heißt:  <a href="{{.Link}}" target="_blank">{{.Link}}</a></h3>
+    </body>
+</html>
+
