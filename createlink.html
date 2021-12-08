@@ -11,10 +11,18 @@
     <body>
         <h1>Das ist die beste URL-Shortener Seite</h1>
         <form action="/createlink" method="post">
-            Link:<input type="text" name="longurl">
+            Link: <input type="text" name="longurl">
             <input type="submit" value="Create">
         </form>
-        <h3>Dein neuer kurzer Link heißt:  <a href="{{.Link}}" target="_blank">{{.Link}}</a></h3>
+        <h3>Dein neuer kurzer Link heißt:  <a href="{{.Link}}" target="_blank">{{.Link}}</a> <button onclick="copyToClipboard()">Copy Link</button> </h3>
+
+
+        <script>
+            function copyToClipboard() {
+                /* Copy the text inside the text field */
+                navigator.clipboard.writeText("{{.Link}}");
+            }
+        </script>
     </body>
 </html>
 

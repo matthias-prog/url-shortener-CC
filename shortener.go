@@ -25,6 +25,9 @@ func pageHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func linkCreator(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	longurl := r.Form["longurl"]
+	fmt.Printf("übereichte Lang URL: %s\n", longurl)
 	t, _ := template.ParseFiles("createlink.html")
 	link := ShortLink{"https://google.de", 1}
 	t.Execute(w, link)
